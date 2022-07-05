@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import PostForm from './PostForm';
 import Post from './Post';

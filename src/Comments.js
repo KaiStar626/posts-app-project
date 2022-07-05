@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CommentForm from './CommentForm';
 import Comment from './Comment.js';
 
 function Comments() {
 	const [comments, setComments] = useState([]);
+	const[commenting, setCommenting] = useState(false);
 
 	return (
 		<div>

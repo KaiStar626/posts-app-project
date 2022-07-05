@@ -1,4 +1,8 @@
 import Comments from './Comments';
+import CommentForm from './CommentForm';
+
+import React, {useState} from 'react';
+
 
 function Comment() {
 	return (
