@@ -23,7 +23,7 @@ code {
 {
   width: 100%;
   height:100vh;
-  background-image: linear-gradient(rgba(255, 254, 254, 0.7), #4d439cc7), url(/public/nasa.jpg);
+  background-image: radial-gradient(rgba(255, 254, 254, 0.7), #4d439cc7), url(nasa.jpg);
   background-position: center;
   background-size: cover;
   display: flex;
