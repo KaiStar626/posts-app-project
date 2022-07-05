@@ -9,8 +9,27 @@
 			content="Web site created using create-react-app"
 		/>
 		<title>My React Post App</title>
+		<link rel="stylesheet" href="/src/index.css">
 	</head>
 	<body>
+		<div class="posts">
+			<form>
+				<div class="input-info">
+					<input type="text" id="name" required>
+					<label for="name">Name</label>
+				</div>
+				<div class="input-info">
+					<input type="text" id="title" required>
+					<label for="title">Title</label>
+				</div>
+				<div class="input-info">
+					<textarea id="comment" rows="8"></textarea>
+					<label for="comment">Comment</label>
+				</div>
+
+				<button type="submit">Post</button>
+			</form>
+		</div>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
 	</body>
