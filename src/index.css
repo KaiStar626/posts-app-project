@@ -70,7 +70,7 @@ label
   transition: 0.2s;
 }
 
-button
+button, button:disabled, button:active
 {
   padding: 10px 0;
   color:#fff;
@@ -98,3 +98,4 @@ input:focus~label, input:valid~label, textarea:focus~label, textarea:valid~label
 {
   flex-basis: 48%;
 }
+

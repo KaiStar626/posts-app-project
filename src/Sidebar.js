@@ -4,7 +4,8 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-       {/*sidebar options */} 
+       {/*home icon */} 
+       <i class="fa-solid fa-plane-arrival"></i>
     </div>
   )
 }
