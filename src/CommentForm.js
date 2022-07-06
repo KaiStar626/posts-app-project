@@ -3,7 +3,7 @@ import React, {Fragment, useState, Component, forwardRef, useEffect}from "react"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const CommentForm = forwardRef( 
-	({ initName, initComment, initTitle, onSubmit}, ref) =>
+	({ initName, initComment, initTitle, onSubmit}) =>
 	{
 		const[username, setName] = useState(initName)
 		const[comment, setComment] = useState(initComment)
@@ -15,11 +15,11 @@ const CommentForm = forwardRef(
 		if (isValidInput!==validInput) setValidInput(isValidInput);
 		}, [username, comment, title]);
 
-		function postSubmit(e) {
+		{/*function postSubmit(e) {
 			SubmitEvent.textContent = 'time stamp: ${e.timeStamp}';
 			e.preventDefault();
 		}
-		const post = document.getElementById('submit');
+		const post = document.getElementById('submit');*/}
 
 
 		const editName=e=> setName(e.target.value);
@@ -53,7 +53,7 @@ const CommentForm = forwardRef(
 		setTitle(" ");
 	}
 	return (
-		<form {/*onSubmit={handleSubmit(onSubmit)}*/}>
+		<form {/*onSubmit={handleSubmit(onSubmit)}*/} >
 			<input 
 			autoFocus
 			name='name' 
@@ -102,7 +102,7 @@ const CommentForm = forwardRef(
 CommentForm.defaultProps = {
 	initName= " ",
 	initTitle= " ",
-	initTitle= " "
-}
+	initTitle= " ",
+};
 
 export default CommentForm;
