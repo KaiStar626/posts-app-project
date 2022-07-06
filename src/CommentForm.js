@@ -102,7 +102,7 @@ const CommentForm = forwardRef(
 CommentForm.defaultProps = {
 	initName= " ",
 	initTitle= " ",
-	initTitle= " ",
+	initComment= " ",
 };
 
 export default CommentForm;

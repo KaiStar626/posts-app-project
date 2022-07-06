@@ -4,14 +4,14 @@ import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
-function Comment({name, comment, title}) 
+function Comment({username, comment, title}) 
 {
 	const[edit, setEdit]=useState(false);
 	const[nameNow, setNameNow]=useState(username);
-	const[textNow, setTextNow]=useState(comment);
+	const[commentNow, setCommentNow]=useState(comment);
 	const[titleNow, setTitleNow]=useState(title);
 
-	const editComment=(name, comment, title) =>
+	const editComment=(username, comment, title) =>
 	{
 		setNameNow(username);
 		setCommentNow(comment);
@@ -19,23 +19,23 @@ function Comment({name, comment, title})
 		toggle();
 	}
 
-	const toggle=() => setEdit(!editing);
+	const toggle=() => setEdit(!edit);
 
 
 	return (
 		<div className='Comment'>
-			{ editing ? 
+			{ edit ? 
 			(
 				<CommentForm 
 					initName={nameNow}
-					initComment={textNow}
+					initComment={commentNow}
 					initTitle={titleNow}
 					onSubmit={editComment}
 				/> 
 			):(
 				<>
 				<h5>{nameNow}</h5>
-				<p>{textNow}</p>
+				<p>{commentNow}</p>
 				<button 
 					 onClick={toggle} >
 					<span>Edit</span>
