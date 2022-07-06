@@ -1,7 +1,7 @@
 import Comments from './Comments';
 import CommentForm from './CommentForm';
 import React, {useState} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 
 
 function Comment({username, comment, title}) 
@@ -39,7 +39,6 @@ function Comment({username, comment, title})
 				<button 
 					 onClick={toggle} >
 					<span>Edit</span>
-					<FontAwesomeIcon icon="fa-solid fa-satellite" border />
 				</button>
 				{/*<Comments />*/}
 				</>

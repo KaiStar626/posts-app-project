@@ -1,6 +1,6 @@
-import {useForm} from "react-hook-form";
+
 import React, {Fragment, useState, Component, forwardRef, useEffect}from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 
 const CommentForm = forwardRef( 
 	({ initName, initComment, initTitle, onSubmit}) =>
@@ -11,7 +11,7 @@ const CommentForm = forwardRef(
 		const[isValidInput, setValidInput] = useState(initName && initComment && initTitle)
 
 	useEffect(() => {
-		const validInput = username.length && text.length;
+		const validInput = username.length && comment.length;
 		if (isValidInput!==validInput) setValidInput(isValidInput);
 		}, [username, comment, title]);
 
@@ -27,7 +27,7 @@ const CommentForm = forwardRef(
 		const editTitle=e=> setTitle(e.target.value);
 
 	{/*const [isSending, setIsSending] = useState(false);*/}
-	const {register, errors, handleSubmit, reset} = useForm();
+	{/*const {register, errors, handleSubmit, reset} = useForm();*/}
 
 	{
 		/*const onSubmit = data => {
@@ -52,22 +52,30 @@ const CommentForm = forwardRef(
 		setComment(" ");
 		setTitle(" ");
 	}
+
+	CommentForm.defaultProps = 
+{
+	initName: " ",
+	initTitle: " ",
+	initComment: " ",
+}; 
+
 	return (
-		<form {/*onSubmit={handleSubmit(onSubmit)}*/} >
+		<form  >
 			<input 
 			autoFocus
 			name='name' 
 			type='text' 
-			placeholder='Name' 
-			ref={register({required: true, maxLength: 80})}
+			placeholder='Name'
+			/*ref={register({required: true, maxLength: 20})}*/ 
 			value={username}
 			/>
 
 			<input 
 			name='title' 
 			type='text' 
-			placeholder='Title' 
-			ref={register({required: false, maxLength: 80})}
+			placeholder='Title'
+			/*ref={register({required: true, maxLength: 20})}*/ 
 			value={title}
 			/>
 
@@ -76,10 +84,10 @@ const CommentForm = forwardRef(
 			cols='30' 
 			rows='10' 
 			placeholder='Comment'
-			ref={register({required: true, maxLength: 500})}
-			></textarea>
+			/*ref={register({required: true, maxLength: 100})}*/
+			/>
 
-			{errors.comment && (<span> You have to write a comment</span>)}
+			{/*errors.comment && */ (<span> You have to write a comment</span>)}
 			
 
 			{/*<input
@@ -91,7 +99,6 @@ const CommentForm = forwardRef(
 			<button 
 				disabled={!isValidInput}  onClick={postSubmit} type='button'>
 				<strong>Submit</strong>
-				<FontAwesomeIcon icon="fa-solid fa-rocket" />
 			</button>
 
 		</form>
@@ -99,10 +106,6 @@ const CommentForm = forwardRef(
 	}
 );
  
-CommentForm.defaultProps = {
-	initName= " ",
-	initTitle= " ",
-	initComment= " ",
-};
+
 
 export default CommentForm;
