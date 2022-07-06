@@ -6,7 +6,7 @@ import React, {useState} from 'react';
 
 function Comment({username, comment, title}) 
 {
-	const[edit, setEdit]=useState(false);
+	const[editing, setEditing]=useState(false);
 	const[nameNow, setNameNow]=useState(username);
 	const[commentNow, setCommentNow]=useState(comment);
 	const[titleNow, setTitleNow]=useState(title);
@@ -19,12 +19,12 @@ function Comment({username, comment, title})
 		toggle();
 	}
 
-	const toggle=() => setEdit(!edit);
+	const toggle=() => setEditing(!editing);
 
 
 	return (
 		<div className='Comment'>
-			{ edit ? 
+			{ editing ? 
 			(
 				<CommentForm 
 					initName={nameNow}

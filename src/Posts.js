@@ -6,14 +6,14 @@ import Post from './Post';
 function Posts() {
 	const [posts, setPosts] = useState([]);
 
-	const addNewPost=(username, title, comment) => setPosts([...posts, {username, title, comment}])
+	const addNewPost=(username,comment, title) => setPosts([...posts, {username,comment, title}])
 	
 	return (
 		<div>
 			<PostForm  onSubmit={addNewPost}/>
 			<div>
 				{posts.map(post => (
-					<Post />
+					<Post {...post}/>
 				))}
 			</div>
 		</div>

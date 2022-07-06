@@ -12,6 +12,8 @@ code {
     monospace;
 }
 */
+
+
 *{
   margin:0;
   padding: 0;
@@ -98,4 +100,6 @@ input:focus~label, input:valid~label, textarea:focus~label, textarea:valid~label
 {
   flex-basis: 48%;
 }
+
+
 
