@@ -4,30 +4,45 @@ import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
-const toggleMode=() => setEdit(!editing);
-
-const editComment=(name, text) =>
+function Comment({name, comment, title}) 
 {
-	setNameNow(name);
-	setTextNow(text);
-	toggleMode();
-	
-}
-function Comment() {
+	const[edit, setEdit]=useState(false);
+	const[nameNow, setNameNow]=useState(username);
+	const[textNow, setTextNow]=useState(comment);
+	const[titleNow, setTitleNow]=useState(title);
+
+	const editComment=(name, comment, title) =>
+	{
+		setNameNow(username);
+		setCommentNow(comment);
+		setTitleNow(title);
+		toggle();
+	}
+
+	const toggle=() => setEdit(!editing);
+
+
 	return (
-		<div className='comment'>
+		<div className='Comment'>
 			{ editing ? 
 			(
 				<CommentForm 
 					initName={nameNow}
 					initComment={textNow}
+					initTitle={titleNow}
 					onSubmit={editComment}
 				/> 
 			):(
-
-			<h4>{nameNow}</h4>
-			<p>{textNow}</p>
-			<Comments />
+				<>
+				<h5>{nameNow}</h5>
+				<p>{textNow}</p>
+				<button 
+					 onClick={toggle} >
+					<span>Edit</span>
+					<FontAwesomeIcon icon="fa-solid fa-satellite" border />
+				</button>
+				{/*<Comments />*/}
+				</>
 			)}
 		</div>
 	);
